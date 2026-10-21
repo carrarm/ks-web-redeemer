@@ -1,0 +1,10 @@
+<h1>
+  <ks-icon name="pin" size="1.5rem" />
+  Pinned
+</h1>
+
+<div class="flex flex-wrap gap-4">
+  @for (card of cards(); track card.title) {
+    <ks-redemption-card [card]="card" />
+  }
+</div>

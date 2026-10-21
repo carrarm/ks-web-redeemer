@@ -1,0 +1,30 @@
+<div [class]="card().type" class="ks-card">
+  <div class="flex gap-4">
+    @let logo = isGovernor() ? 'governor-logo' : 'alliance-logo';
+    <ks-icon [name]="logo" size="4rem" />
+
+    <div class="flex-1 flex flex-col gap-2">
+      <span class="card__title">{{ card().title }}</span>
+      <span class="card__description">{{ card().description }}</span>
+    </div>
+
+    @let pinIcon = card().pinned ? 'unpin' : 'pin';
+    <div (click)="pinClicked.emit()" class="ks-icon-button" role="button">
+      <ks-icon [name]="pinIcon" class="h-fit" />
+    </div>
+  </div>
+
+  <div class="flex justify-center mt-4">
+    @if (isGovernor()) {
+      <button (click)="actionClicked.emit()">
+        <ks-icon name="gift" />
+        Redeem
+      </button>
+    } @else {
+      <button (click)="actionClicked.emit()">
+        <ks-icon name="user-group" />
+        View
+      </button>
+    }
+  </div>
+</div>

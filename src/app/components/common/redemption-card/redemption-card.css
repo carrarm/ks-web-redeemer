@@ -1,0 +1,29 @@
+.ks-card {
+  color: var(--contrast-color);
+
+  width: 300px;
+}
+
+.governor {
+  background-color: #473a20;
+
+  button {
+    background-color: #b57400;
+  }
+}
+
+.alliance {
+  background-color: #122f58;
+
+  button {
+    background-color: #1a6cd5;
+  }
+}
+
+.card__title {
+  font-weight: 500;
+}
+
+.card__description {
+  font-size: 0.875rem;
+}
