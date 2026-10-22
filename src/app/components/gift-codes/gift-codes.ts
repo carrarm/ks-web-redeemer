@@ -1,6 +1,7 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Icon } from '@/components/common/icon/icon';
 import { DatePipe } from '@angular/common';
+import { AppState } from '@/core/app-state';
 
 interface GiftCode {
   code: string;
@@ -14,14 +15,7 @@ interface GiftCode {
   templateUrl: './gift-codes.html',
 })
 export class GiftCodes {
-  protected readonly giftCodes = signal<GiftCode[]>(this.mockCodes());
+  private readonly appState = inject(AppState);
 
-  private mockCodes(): GiftCode[] {
-    return [
-      { code: 'VIP777', expDate: '2024-01-01' },
-      { code: 'Kingshot888', expDate: '2024-02-01' },
-      { code: 'Slayer999', expDate: '2024-03-01' },
-      { code: 'Archer1010', expDate: '2024-04-01' },
-    ];
-  }
+  protected readonly giftCodes = this.appState.giftCodes;
 }
