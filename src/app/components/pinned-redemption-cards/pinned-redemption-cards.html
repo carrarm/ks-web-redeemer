@@ -4,7 +4,10 @@
 </h1>
 
 <div class="flex flex-wrap gap-4">
-  @for (card of cards(); track card.title) {
-    <ks-redemption-card [card]="card" />
+  @for (governor of governors(); track governor.id) {
+    <ks-redemption-card [governor]="governor" [pinned]="true" />
+  }
+  @for (alliance of alliances(); track alliance.tag) {
+    <ks-redemption-card [alliance]="alliance" [pinned]="true" />
   }
 </div>

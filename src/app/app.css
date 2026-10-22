@@ -4,4 +4,64 @@
   padding: 0 1rem;
 
   display: block;
+
+  --banner-height: 220px;
+  --header-height: 170px;
+}
+
+header {
+  position: relative;
+  height: var(--header-height);
+  padding-top: 2rem;
+}
+
+header::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: 0;
+
+  width: 100%;
+  height: var(--banner-height);
+
+  background-image:
+    linear-gradient(
+      to right,
+      var(--page-background) 0%,
+      rgba(8, 15, 29, 0.98) 15%,
+      rgba(8, 15, 29, 0.92) 30%,
+      rgba(8, 15, 29, 0.75) 40%,
+      rgba(8, 15, 29, 0.45) 50%,
+      rgba(8, 15, 29, 0.15) 70%,
+      transparent 90%
+    ),
+    linear-gradient(to top, var(--page-background) 0%, rgba(8, 15, 29, 0.4) 18%, transparent 50%),
+    linear-gradient(to left, rgba(8, 15, 29, 0.08) 0%, transparent 15%),
+    url('../../public/ks-banner.webp');
+  background-position:
+    center,
+    center,
+    center,
+    top right;
+
+  background-repeat: no-repeat;
+  background-size:
+    100% 100%,
+    100% 100%,
+    100% 100%,
+    auto 100%;
+}
+
+main {
+  --top-margin: 1.5rem;
+  margin-top: calc(var(--banner-height) - var(--header-height) + var(--top-margin));
+
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  &.banner-overflow {
+    --top-margin: -5rem;
+  }
 }

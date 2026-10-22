@@ -16,7 +16,7 @@
   background-color: #122f58;
 
   button {
-    background-color: #1a6cd5;
+    background-color: var(--alliance-color);
   }
 }
 

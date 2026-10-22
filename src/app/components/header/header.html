@@ -1,9 +1,17 @@
-<header>
-  <div class="flex flex-col gap-2">
-    <div class="header__title">
-      <ks-icon name="crown-shield" size="3rem" />
-      <div class="header__title-main">Kingshot redeemer</div>
-    </div>
-    <div class="header__title-subtitle">Redeem gift codes for governors & alliances</div>
+<div class="header__title">
+  <ks-icon [name]="content().logo" size="3rem" />
+  <div class="header__title-main">{{ content().title }}</div>
+</div>
+<div class="header__title-subtitle">{{ content().subtitle }}</div>
+
+@if (appState.alliance(); as alliance) {
+  <div class="header__actions">
+    <button class="header__actions-redeem">
+      <ks-icon name="gift" />
+      Redeem codes
+    </button>
+    @if (alliance.lastSync) {
+      <span>Last sync: {{ alliance.lastSync | date }}</span>
+    }
   </div>
-</header>
+}
