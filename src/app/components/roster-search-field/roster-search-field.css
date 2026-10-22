@@ -1,0 +1,31 @@
+:host {
+  display: block;
+
+  max-width: 400px;
+}
+
+input {
+  width: 100%;
+  background-color: var(--input-background-color);
+  border: solid 1px var(--input-border-color);
+  border-radius: var(--input-border-radius);
+  padding: 0.5rem 0.8rem;
+}
+
+.field__hint {
+  font-size: 0.8rem;
+  margin-top: 5px;
+  margin-left: 0.5rem;
+}
+
+.ks-icon-button {
+  position: absolute;
+  right: 1.2rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.ks-icon-button {
+  padding: 5px 0.5rem;
+  border-radius: 7px;
+}

@@ -1,1 +1,78 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'tailwindcss';
+
+:root {
+  --page-background: #0a1321;
+
+  --text-color: #98a5b8;
+  --title-color: #ffffff;
+  --title-font-weight: 500;
+
+  --card-border-radius: 7px;
+  --card-border-color-neutral: #17253a;
+  --card-background-color-neutral: #121e32;
+  --card-padding-x: 1.2rem;
+  --card-padding-y: 1rem;
+
+  --input-background-color: #142238;
+  --input-border-color: #17253a;
+  --input-border-radius: 7px;
+
+  --contrast-color: #ffffff;
+}
+
+html {
+  background-color: var(--page-background);
+
+  font-size: 0.875rem;
+  font-family: 'Google Sans', sans-serif;
+  color: var(--text-color);
+}
+
+h1 {
+  margin-bottom: 1.5rem;
+
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+
+  color: var(--title-color);
+  font-weight: var(--title-font-weight);
+  font-size: 1.3rem;
+}
+
+.ks-card {
+  border-radius: var(--card-border-radius);
+  border: 1px solid var(--card-border-color-neutral);
+  background-color: var(--card-background-color-neutral);
+  padding: var(--card-padding-y) var(--card-padding-x);
+}
+
+button {
+  border-radius: 25px;
+  background-color: #23467c;
+  padding: 0.4rem 1.2rem;
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+
+  color: white;
+
+  &:hover {
+    filter: brightness(0.9);
+  }
+}
+
+.ks-icon-button {
+  border-radius: 50%;
+  width: fit-content;
+  height: fit-content;
+  padding: 0.5rem;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #2d3f5f;
+  }
+}

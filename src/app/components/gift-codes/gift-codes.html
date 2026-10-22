@@ -1,0 +1,13 @@
+<h1>
+  <ks-icon name="gift" size="1.5rem" />
+  Gift codes
+</h1>
+
+<div class="flex flex-wrap gap-4">
+  @for (giftCode of giftCodes(); track giftCode.code) {
+    <div class="code__card ks-card">
+      <span class="code__code">{{ giftCode.code }}</span>
+      <span class="code__exp">Expires on {{ giftCode.expDate | date: 'shortDate' }}</span>
+    </div>
+  }
+</div>
