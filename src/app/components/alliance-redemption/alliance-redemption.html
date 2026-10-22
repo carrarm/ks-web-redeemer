@@ -1,0 +1,10 @@
+<button (click)="goBack()">
+  <ks-icon name="chevron-left" />
+  Go back
+</button>
+
+<div class="mt-8 grid grid-cols-2 gap-x-8 gap-y-4">
+  @for (governor of roster(); track governor.id) {
+    <ks-alliance-member [governor]="governor" [availableGiftCodes]="giftCodes()" />
+  }
+</div>

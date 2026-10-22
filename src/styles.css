@@ -18,6 +18,8 @@
   --input-border-radius: 7px;
 
   --contrast-color: #ffffff;
+
+  --alliance-color: #1a6cd5;
 }
 
 html {
@@ -49,7 +51,7 @@ h1 {
 
 button {
   border-radius: 25px;
-  background-color: #23467c;
+  background-color: rgba(0, 0, 0, 0.7);
   padding: 0.4rem 1.2rem;
   cursor: pointer;
 

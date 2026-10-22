@@ -1,9 +1,7 @@
 import { Component, signal } from '@angular/core';
 import { Icon } from '@/components/common/icon/icon';
-import {
-  RedemptionCard,
-  RedemptionCardData,
-} from '@/components/common/redemption-card/redemption-card';
+import { RedemptionCard } from '@/components/common/redemption-card/redemption-card';
+import { Alliance, Governor } from '@/core/types';
 
 @Component({
   imports: [Icon, RedemptionCard],
@@ -12,22 +10,6 @@ import {
   templateUrl: './pinned-redemption-cards.html',
 })
 export class PinnedRedemptionCards {
-  protected readonly cards = signal<RedemptionCardData[]>(this.mockCards());
-
-  private mockCards(): RedemptionCardData[] {
-    return [
-      {
-        type: 'governor',
-        title: 'Lord Chuck IV',
-        description: 'Governor ID: 123456789',
-        pinned: true,
-      },
-      {
-        type: 'alliance',
-        title: '[emr] Lordaeron',
-        description: '97 members',
-        pinned: true,
-      },
-    ];
-  }
+  protected readonly governors = signal<Governor[]>([{ id: 123456789, name: 'Lord Chuck IV' }]);
+  protected readonly alliances = signal<Alliance[]>([{ tag: 'emr', name: 'Lordaeron' }]);
 }

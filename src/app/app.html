@@ -1,7 +1,13 @@
-<ks-header class="mb-8" />
+<header>
+  <ks-header />
+</header>
 
-<main class="mt-12 flex flex-col gap-12">
-  <ks-roster-search-field />
-  <ks-gift-codes />
-  <ks-pinned-redemption-cards />
+<main [class.banner-overflow]="!alliance()">
+  @if (alliance()) {
+    <ks-alliance-redemption />
+  } @else {
+    <ks-roster-search-field />
+    <ks-gift-codes />
+    <ks-pinned-redemption-cards />
+  }
 </main>
