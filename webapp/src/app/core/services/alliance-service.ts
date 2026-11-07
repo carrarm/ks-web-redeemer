@@ -1,12 +1,23 @@
-import { Service } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { inject, Service } from '@angular/core';
 import { Observable, of, tap } from 'rxjs';
+
 import { Governor } from '@/core/types';
+import { environment } from '@env/environment';
 
 @Service()
 export class AllianceService {
+  private readonly http = inject(HttpClient);
+
+  private readonly baseUrl = environment.firebaseUrl;
+
   private rosterCache: Record<string, Governor[]> = {};
 
-  public getRoster(allianceTag: string): Observable<Governor[]> {
+  public searchGovernor(governorId: number): Observable<Governor | undefined> {
+    return this.http.get<Governor>(`${this.baseUrl}/governorInfo?gid=${governorId}`);
+  }
+
+  public getRoster(kingdomId: number, allianceTag: string): Observable<Governor[]> {
     const cachedRoster = this.rosterCache[allianceTag];
     return cachedRoster
       ? of(cachedRoster)

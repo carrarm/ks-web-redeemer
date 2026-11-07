@@ -1,15 +1,17 @@
-import { Service } from '@angular/core';
-import { Observable, of } from 'rxjs';
-import { GiftCode } from '@/core/types';
+import { inject, Service } from '@angular/core';
+import { map, Observable } from 'rxjs';
+import { environment } from '@env/environment';
+import { HttpClient } from '@angular/common/http';
 
 @Service()
 export class GiftCodeService {
-  public fetchGiftCodes(): Observable<GiftCode[]> {
-    return of([
-      { code: 'VIP777', expDate: '2024-01-01' },
-      { code: 'Kingshot888', expDate: '2024-02-01' },
-      { code: 'Slayer999', expDate: '2024-03-01' },
-      { code: 'Archer1010', expDate: '2024-04-01' },
-    ]);
+  private readonly http = inject(HttpClient);
+
+  private readonly baseUrl = environment.firebaseUrl;
+
+  public fetchGiftCodes(): Observable<string[]> {
+    return this.http
+      .get<{ codes: string[] }>(`${this.baseUrl}/giftCodes`)
+      .pipe(map((response) => response.codes));
   }
 }

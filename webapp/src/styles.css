@@ -17,6 +17,8 @@
   --input-border-color: #17253a;
   --input-border-radius: 7px;
 
+  --button-radius: 25px;
+
   --contrast-color: #ffffff;
 
   --alliance-color: #1a6cd5;
@@ -50,7 +52,7 @@ h1 {
 }
 
 button {
-  border-radius: 25px;
+  border-radius: var(--button-radius);
   background-color: rgba(0, 0, 0, 0.7);
   padding: 0.4rem 1.2rem;
   cursor: pointer;
@@ -77,4 +79,26 @@ button {
   &:hover {
     background-color: #2d3f5f;
   }
+}
+
+a {
+  color: #0096ff;
+  text-decoration: underline;
+}
+
+ul {
+  list-style: disc;
+}
+
+[popover] {
+  position: fixed;
+  background-color: #263d5c;
+  top: anchor(bottom);
+  left: anchor(left);
+  margin: 8px 0 0;
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1px solid #555;
+
+  color: white;
 }

@@ -1,0 +1,13 @@
+{
+  "name": "ks-web-redeemer-back",
+  "version": "1.0.0",
+  "description": "Backend for the Kingshot Redeemer app",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "firebase-admin": "^14.5.0",
+    "firebase-functions": "^7.4.0"
+  }
+}

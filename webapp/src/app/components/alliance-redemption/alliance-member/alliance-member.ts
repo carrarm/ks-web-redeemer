@@ -10,7 +10,7 @@ import { I18nPluralPipe } from '@angular/common';
   templateUrl: './alliance-member.html',
 })
 export class AllianceMember implements OnInit {
-  public readonly availableGiftCodes = input.required<GiftCode[]>();
+  public readonly availableGiftCodes = input.required<string[]>();
   public readonly governor = input.required<Governor>();
 
   protected readonly detailVisible = signal(false);
@@ -31,7 +31,7 @@ export class AllianceMember implements OnInit {
 
   public ngOnInit(): void {
     this.redemptions.set(
-      this.availableGiftCodes().map((code) => ({ code: code.code, state: 'new' })),
+      this.availableGiftCodes().map((code) => ({ code: code, state: 'new' })),
     );
   }
 

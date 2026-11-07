@@ -1,0 +1,17 @@
+:host {
+  display: flex;
+  background-color: #122f58;
+  border-radius: var(--button-radius);
+  width: fit-content;
+}
+
+button {
+  background-color: transparent;
+  color: var(--text-color);
+
+  &.active {
+    background-color: #476287;
+    color: var(--contrast-color);
+    font-weight: 500;
+  }
+}

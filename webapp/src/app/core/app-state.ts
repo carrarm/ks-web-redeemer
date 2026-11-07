@@ -7,7 +7,7 @@ export class AppState {
   private readonly giftCodeService = inject(GiftCodeService);
 
   public readonly alliance = signal<AllianceRoster | undefined>(undefined);
-  public readonly giftCodes = signal<GiftCode[]>([]);
+  public readonly giftCodes = signal<string[]>([]);
 
   constructor() {
     this.giftCodeService.fetchGiftCodes().subscribe((codes) => this.giftCodes.set(codes));

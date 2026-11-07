@@ -1,0 +1,3 @@
+@for (button of buttons(); track button.value) {
+  <button (click)="active.set(button.value)" [class.active]="button.value === active()">{{ button.label }}</button>
+}

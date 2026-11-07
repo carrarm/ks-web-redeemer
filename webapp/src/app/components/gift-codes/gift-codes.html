@@ -1,13 +1,17 @@
 <h1>
-  <ks-icon name="gift" size="1.5rem" />
+  <ks-icon name="gift" size="1.5rem"/>
   Gift codes
 </h1>
 
 <div class="flex flex-wrap gap-4">
-  @for (giftCode of giftCodes(); track giftCode.code) {
+  @for (giftCode of giftCodes(); track giftCode) {
     <div class="code__card ks-card">
-      <span class="code__code">{{ giftCode.code }}</span>
-      <span class="code__exp">Expires on {{ giftCode.expDate | date: 'shortDate' }}</span>
+      <span class="code__code">{{ giftCode }}</span>
+    </div>
+  } @empty {
+    <div>
+      It is currently not possible to retrieve or redeem gift codes from this site. We apologize for the inconvenience.
+      You can view them and redeem them manually at <a href="https://kingshot.net/gift-codes" target="_blank">https://kingshot.net/gift-codes</a>
     </div>
   }
 </div>

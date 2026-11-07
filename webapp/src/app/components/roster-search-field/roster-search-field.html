@@ -1,7 +1,35 @@
-<div class="relative">
-  <input placeholder="Search for a governor or an alliance" type="text" />
-  <div class="ks-icon-button" role="button">
-    <ks-icon class="h-fit" name="search" size="sm" />
+<ks-toggle-buttons [buttons]="searchTypeButtons" [(active)]="searchType"/>
+@if (searchType() === 'governor') {
+  <div class="field--governor-search">
+    <div class="relative">
+      <input placeholder="Governor ID" type="number" [(ngModel)]="governorId"/>
+      <div class="ks-icon-button" role="button" (click)="searchGovernor()">
+        <ks-icon class="h-fit" name="search" size="sm"/>
+      </div>
+    </div>
+    <button class="field__hint" popovertarget="roster-field-help">Where is it?</button>
   </div>
+} @else {
+  <div class="field--kingdom">
+    <input placeholder="Kingdom ID" type="number"/>
+    <button class="field__hint" popovertarget="roster-field-help">Where is it?</button>
+  </div>
+
+  <div class="field--alliance-search">
+    <div class="relative">
+      <input placeholder="Alliance tag" type="text" maxlength="3"/>
+      <div class="ks-icon-button" role="button">
+        <ks-icon class="h-fit" name="search" size="sm"/>
+      </div>
+    </div>
+  </div>
+}
+
+<div id="roster-field-help" popover="auto">
+  Your governor ID and kingdom ID can be found in the game:
+  <ul class="ml-4">
+    <li>Open Kingshot on your device</li>
+    <li>Tap on your profile avatar</li>
+    <li>Your ID and kingdom ID are displayed below your name</li>
+  </ul>
 </div>
-<div class="field__hint">Enter the governor ID or the alliance tag</div>

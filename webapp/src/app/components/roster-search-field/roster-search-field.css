@@ -1,7 +1,15 @@
 :host {
-  display: block;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
 
-  max-width: 400px;
+.field--governor-search {
+  max-width: 250px;
+}
+
+.field--kingdom, .field--alliance-search {
+  width: 140px;
 }
 
 input {
@@ -13,9 +21,19 @@ input {
 }
 
 .field__hint {
-  font-size: 0.8rem;
+  appearance: none;
   margin-top: 5px;
   margin-left: 0.5rem;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+
+  color: inherit;
+  font-size: 0.8rem;
+  text-decoration: underline;
+
+  anchor-name: --roster-hint-anchor
 }
 
 .ks-icon-button {
@@ -28,4 +46,8 @@ input {
 .ks-icon-button {
   padding: 5px 0.5rem;
   border-radius: 7px;
+}
+
+#roster-field-help {
+  position-anchor: --roster-hint-anchor;
 }

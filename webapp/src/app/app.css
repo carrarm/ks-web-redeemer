@@ -13,6 +13,7 @@ header {
   position: relative;
   height: var(--header-height);
   padding-top: 2rem;
+  pointer-events: none;
 }
 
 header::before {

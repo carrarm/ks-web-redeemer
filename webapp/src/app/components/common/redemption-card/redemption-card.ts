@@ -63,7 +63,7 @@ export class RedemptionCard {
     const alliance = this.alliance();
     if (!alliance) return;
 
-    this.allianceService.getRoster(alliance.tag).subscribe((roster) => {
+    this.allianceService.getRoster(2363, alliance.tag).subscribe((roster) => {
       this.appState.alliance.set({ ...alliance, roster, lastSync: new Date().toISOString() });
     });
   }

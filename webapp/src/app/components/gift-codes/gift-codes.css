@@ -11,8 +11,4 @@
     font-weight: 600;
     color: var(--contrast-color);
   }
-
-  .code__exp {
-    font-size: 0.8rem;
-  }
 }
